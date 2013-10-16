@@ -1,4 +1,6 @@
 'use strict';
+
+
 function onDeviceReady() {
     (function ($) {
         $('#svg-container').load('img/dog_is_digging.svg', function () {
@@ -150,53 +152,62 @@ function onDeviceReady() {
             ];
             var mud_timer = setInterval(mud_move, mud_delay);
 
-            var audio_dog = new Media('audio/dog.mp3', function () {
-                alert('play success.')
-            }, function (error) {
-                var cause = '未知错误';
-                switch (error.code) {
-                    case MediaError.MEDIA_ERR_ABORTED:
-                        cause = '异常中止';
-                        break;
-                    case MediaError.MEDIA_ERR_NETWORK:
-                        cause = '网络错误';
-                        break;
-                    case MediaError.MEDIA_ERR_DECODE:
-                        cause = '解码错误';
-                        break;
-                    case MediaError.MEDIA_ERR_NONE_SUPPORTED:
-                        cause = '不支持';
-                        break;
+            var play_audio_dog, play_audio_dig;
+
+            if (Utils.isAndroid()) {
+                var audio_dog = new Media('/android_asset/www/audio/dog.mp3', function () {
+                }, Utils.onMediaError);
+                var audio_dig = new Media('/android_asset/www/audio/dig.mp3', function () {
+                }, Utils.onMediaError);
+
+                var audio_wangwang = new Media('/android_asset/www/audio/wangwang.WAV', function () {
+                    setTimeout(function () {
+                        audio_dog.play();
+                    }, 500);
+                }, Utils.onMediaError);
+
+                var audio_wadongsheng = new Media('/android_asset/www/audio/wadongsheng.WAV', function () {
+                    setTimeout(function () {
+                        audio_dig.play();
+                    }, 500)
+                }, Utils.onMediaError);
+
+                play_audio_dog = function () {
+                    audio_wangwang.play();
+                };
+
+                play_audio_dig = function() {
+                    audio_wadongsheng.play();
                 }
-                alert('cause:' + cause + ';message=' + error.message);
-            });
-            audio_dog.play();
+            } else { // not android
+                $('#audio-wangwang').on('ended', function () {
+                    setTimeout(function () {
+                        $('#audio-dog').get(0).play();
+                    }, 500)
+                });
 
-            /*
-             $('#audio-wangwang').on('ended', function () {
-             setTimeout(function () {
-             $('#audio-dog').get(0).play();
-             }, 500)
-             });
-             function play_audio_dog() {
-             $('#audio-wangwang').get(0).play();
-             }
+                $('#audio-wadongsheng').on('ended', function () {
+                    setTimeout(function () {
+                        $('#audio-dig').get(0).play();
+                    }, 500)
+                });
+                play_audio_dog = function () {
+                    $('#audio-wangwang').get(0).play();
+                };
+                play_audio_dig = function() {
+                    $('#audio-wadongsheng').get(0).play();
+                }
+            }
 
-             $('#audio-wadongsheng').on('ended', function () {
-             setTimeout(function () {
-             $('#audio-dig').get(0).play();
-             }, 500)
-             });
-             function play_audio_dig() {
-             $('#audio-wadongsheng').get(0).play();
-             }
-
-             setTimeout(play_audio_dog, 1000);
-             setTimeout(play_audio_dig, 3500);
-             */
-
+            setTimeout(play_audio_dog, 1000);
+            setTimeout(play_audio_dig, 4000);
         })
     })(jQuery);
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
+if(Utils.isAndroid()) {
+    Utils.require_phonegap_js();
+    document.addEventListener("deviceready", onDeviceReady, false);
+} else {
+    onDeviceReady();
+}

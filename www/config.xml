@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.gtan.demo.drguo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>DrGuo Demo</name>
+    <name>神奇英语</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        郭博士神奇英语——小学英语词汇教程示例
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="service@gtan.com" href="http://gtan.com">
+        上海广谈信息技术有限公司
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
