@@ -2,6 +2,7 @@
 
 
 function onDeviceReady() {
+    navigator.splashscreen.hide();
     (function ($) {
         $('#svg-container').load('img/dog_is_digging.svg', function () {
             var tail_angel = 0;

@@ -48,6 +48,7 @@ function center_video_tag() {
         video_tag.id = 'song_video';
         video_tag.autoplay = 'autoplay';
         video_tag.controls = 'controls';
+        video_tag.poster = 'img/poster.jpg';
         document.body.appendChild(video_tag);
 
         function reset_video_element() {
