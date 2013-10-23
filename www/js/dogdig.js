@@ -2,7 +2,9 @@
 
 
 function onDeviceReady() {
-    navigator.splashscreen.hide();
+    if (Utils.isAndroid()) {
+        navigator.splashscreen.hide();
+    }
     (function ($) {
         $('#svg-container').load('img/dog_is_digging.svg', function () {
             var tail_angel = 0;
@@ -48,9 +50,9 @@ function onDeviceReady() {
                 transform_delta('#tail', [
                     {type: 'rotate', angle: tail_angel, cx: tail_rotate_x, cy: tail_rotate_y}
                 ]);
-                if (tail_angel > 0) {
+                if (tail_angel > 8) {
                     angle_delta = -4
-                } else if (tail_angel < -16) {
+                } else if (tail_angel < -8) {
                     angle_delta = 4
                 }
                 tail_angel += angle_delta;
@@ -153,6 +155,24 @@ function onDeviceReady() {
             ];
             var mud_timer = setInterval(mud_move, mud_delay);
 
+            function blink_text(times){
+                if(times == 0 )
+                    return;
+                var color;
+                if(times % 2 == 0) {
+                    color = 'black'
+                } else {
+                    color = 'red'
+                }
+                $('#text-red1>tspan').css('fill', color);
+                $('#text-red2>tspan').css('fill', color);
+                $('#text-red3>tspan').css('fill', color);
+                $('#text-red4>tspan').css('fill', color);
+                setTimeout(function() {
+                    blink_text(times - 1);
+                }, 500)
+            }
+
             var play_audio_dog, play_audio_dig;
 
             if (Utils.isAndroid()) {
@@ -177,7 +197,7 @@ function onDeviceReady() {
                     audio_wangwang.play();
                 };
 
-                play_audio_dig = function() {
+                play_audio_dig = function () {
                     audio_wadongsheng.play();
                 }
             } else { // not android
@@ -195,18 +215,29 @@ function onDeviceReady() {
                 play_audio_dog = function () {
                     $('#audio-wangwang').get(0).play();
                 };
-                play_audio_dig = function() {
+                play_audio_dig = function () {
                     $('#audio-wadongsheng').get(0).play();
                 }
             }
 
+
             setTimeout(play_audio_dog, 1000);
             setTimeout(play_audio_dig, 4000);
+            setTimeout(function(){
+                blink_text(6)
+            }, 7000);
+
+            $('#dog-mask').on('click', function(){
+                play_audio_dog();
+            });
+            $('#dig-mask').on('click', function(){
+                play_audio_dig();
+            })
         })
     })(jQuery);
 }
 
-if(Utils.isAndroid()) {
+if (Utils.isAndroid()) {
     Utils.require_phonegap_js();
     document.addEventListener("deviceready", onDeviceReady, false);
 } else {

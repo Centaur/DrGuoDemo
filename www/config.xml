@@ -61,5 +61,5 @@
         <param name="android-package" value="org.apache.cordova.SplashScreen" />
     </feature>
     <access origin="http://127.0.0.1*" />
-    <content src="dogdig.html" />
+    <content src="menu.html" />
 </widget>

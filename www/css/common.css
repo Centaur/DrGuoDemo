@@ -1,0 +1,19 @@
+.page{ margin: 0 auto; margin-top: 15px;}
+.page a{ display:block; float:left; padding:6px 15px 6px 15px; margin-right:10px; color:#5e6f00; font-family:"寰蒋闆呴粦"; font-weight: bolder; text-decoration:none;
+    border:2px solid #cccc00;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: #FFC;
+    background: -moz-linear-gradient(top, #eef5c2, #e0d71e);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#eef5c2), to(#e0d71e));
+}
+.page a:active{ text-decoration:none;
+    border:2px solid #afaf00;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: #FFC;
+    background: -moz-linear-gradient(top, #e4ef9d, #cdbf0f);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e4ef9d), to(#cdbf0f));
+}

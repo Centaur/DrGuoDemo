@@ -9,7 +9,13 @@
 'use strict';
 
 window.Utils = {
-    onMediaError: function(error){
+    checkIfFileExists: function (path, onExist) {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+            fileSystem.root.getFile(path, { create: false }, onExist, null);
+        }, null); //of requestFileSystem
+    },
+
+    onMediaError: function (error) {
         var cause = '未知错误';
         switch (error.code) {
             case MediaError.MEDIA_ERR_ABORTED:
@@ -27,14 +33,20 @@ window.Utils = {
         }
     },
 
-    require_phonegap_js: function(){
+    require_phonegap_js: function () {
         var phonegap_js = document.createElement('script');
         phonegap_js.src = 'phonegap.js';
         phonegap_js.type = 'text/javascript';
         document.body.appendChild(phonegap_js);
     },
 
-    isAndroid: function(){
+    isAndroid: function () {
         return /android/i.test(navigator.userAgent.toLowerCase());
+    },
+
+    isPhone: function () {
+        alert('user-agent = ' + navigator.userAgent.toLowerCase());
+        return /mobile/i.test(navigator.userAgent.toLowerCase());
     }
-};
+}
+;

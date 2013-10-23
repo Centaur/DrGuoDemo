@@ -8,12 +8,17 @@
 
 'use strict';
 
-function center_video_tag() {
-    function get_video_url() {
+function onDeviceReady() {
+    function get_video_url(elem) {
         if (Utils.isAndroid()) {
-            return 'file:///mnt/sdcard-ext/1B.mp4';
+            Utils.checkIfFileExists('/mnt/sdcard-ext/1B.mp4', function(){
+                elem.src = 'file:///mnt/sdcard-ext/1B.mp4'
+            });
+            Utils.checkIfFileExists('/mnt/sdcard/1B.mp4', function(){
+                elem.src = 'file:///mnt/sdcard/1B.mp4'
+            });
         } else {
-            return 'video/1B.mp4';
+            elem.src = 'video/1B.mp4';
         }
     }
 
@@ -40,10 +45,11 @@ function center_video_tag() {
                 video_x = (screen_width - 800) / 2;
                 video_y = (screen_height - 600) / 2;
             }
-            return {left: video_x, top: video_y, width: video_width+'px', height: video_height+'px'};
+            return {left: video_x, top: video_y, width: video_width + 'px', height: video_height + 'px'};
         }
+
         var video_tag = document.createElement('video');
-        video_tag.src = get_video_url();
+        get_video_url(video_tag);
         video_tag.control = 'controls';
         video_tag.id = 'song_video';
         video_tag.autoplay = 'autoplay';
@@ -57,10 +63,11 @@ function center_video_tag() {
             video_tag.css({left: calc_result.left, top: calc_result.top});
             video_tag.attr({width: calc_result.width, height: calc_result.height})
         }
+
         reset_video_element();
 
 
-        $(window).on('resize', function(){
+        $(window).on('resize', function () {
             reset_video_element();
         })
     })(jQuery);
@@ -69,5 +76,7 @@ function center_video_tag() {
 
 if (Utils.isAndroid()) {
     Utils.require_phonegap_js();
+    document.addEventListener("deviceready", onDeviceReady, false);
+} else {
+    onDeviceReady();
 }
-center_video_tag();
