@@ -14,79 +14,180 @@
   <g id="question_mark_large">
     <path clip-rule="evenodd" d="m 66.293,86.613 -6.306,4.422 -8.543,-4.422 -2.913,-22.578 19.999,-13 c 0,0 21.969,3.033 26.036,8.525 4.067,5.492 6.509,18.104 5.085,24.002 -1.424,5.898 -10.78,13.221 -12.204,17.086 -1.424,3.863 -1.628,6.102 0.203,7.932 1.831,1.832 4.679,3.459 2.645,5.289 -2.034,1.83 -5.492,5.898 -10.171,1.627 C 75.446,111.225 73.34,105.623 74.531,99.834 76.667,89.461 86.023,84.783 86.43,80.104 86.836,75.426 77.276,68.916 76.259,69.12 c -1.017,0.205 -12.813,4.695 -12.61,6.416 0.203,1.721 2.644,11.077 2.644,11.077 z" id="path5" inkscape:connector-curvature="0" style="fill:#aaa7ca;fill-rule:evenodd"/>
     <path clip-rule="evenodd" d="m 88.261,117.326 c -3.417,2.152 -4.068,8.137 -0.406,10.984 3.66,2.848 4.881,0.814 6.915,-0.203 2.034,-1.017 6.915,-6.307 5.288,-8.746 -1.627,-2.442 -6.305,-5.492 -11.797,-2.035 z" id="path7" inkscape:connector-curvature="0" style="fill:#aaa7ca;fill-rule:evenodd"/>
-    <!-- animateTransform attributeName="transform" attributeType="XML"
-                             type="translate"
-                             from="30 50" to="0 0"
-                             begin="0.4s" dur="0.5s"
-                             repeatCount="indefinite"
-                             additive="sum"
-                   / -->
-  </g>
-    <g id="question_mark_middle">
-      <path clip-rule="evenodd" d="m 25.519,112.054 -1.214,4.432 -5.608,1.219 -9.93,-9.264 4.241,-13.584 c 0,0 11.246,-6.967 15.204,-5.99 3.961,0.977 9.881,5.84 11.472,9.092 1.591,3.25 0.079,10.176 0.896,12.494 0.816,2.316 1.574,3.422 3.111,3.568 1.539,0.143 3.467,-0.193 3.229,1.422 -0.238,1.615 -0.279,4.801 -4.055,4.617 -3.774,-0.182 -6.874,-1.953 -8.529,-5.064 -2.967,-5.58 -0.448,-11.291 -2.042,-13.596 -1.593,-2.303 -8.463,-1.658 -8.853,-1.178 -0.39,0.482 -4.1,7.035 -3.352,7.748 0.748,0.715 5.43,4.084 5.43,4.084 z" id="path11" inkscape:connector-curvature="0" style="fill:#436eab;fill-rule:evenodd"/>
-      <path clip-rule="evenodd" d="m 47.3,117.804 c -0.752,2.291 1.227,5.287 3.992,5.203 2.765,-0.084 2.553,-1.484 3.101,-2.725 0.546,-1.242 0.776,-5.529 -0.899,-6.033 -1.676,-0.501 -4.987,-0.123 -6.194,3.555 z" id="path13" inkscape:connector-curvature="0" style="fill:#436eab;fill-rule:evenodd"/>
-<!--       
- -->      <!-- animateTransform attributeName="transform" attributeType="XML"
-                                    type="scale"
-                                    from="0.92" to="1"
-                                    begin="middle_move1.end" dur="0.25s"
-                                    repeatCount="indefinite"
-                                    additive="sum"
-                          /><animate attributeName="opacity" attributeType="CSS"
-                                   from="1" to="0"
-                                   begin="middle_move1.end" dur="2.5s"
-                                   repeatCount="indefinite"
-                                   additive="sum"
-                         / -->
-     <animateTransform id="phase1"
+    <animateTransform id="large_phase1"
         attributeName="transform" 
-        attributeType="XML" 
-        begin="0.17s; phase2.end" dur="4s" from="71 73" 
-        repeatCount="indefinite" to="0 0" 
+        begin="333ms;large_phase2.end+1042ms" dur="375ms" from="38 66" 
+        to="4 6" 
         additive="sum"
         type="translate"/>
     <animateTransform 
         attributeName="transform" 
-        attributeType="XML" 
-        begin="0.17s;phase2.end" dur="4s" from="86 74" 
-        repeatCount="indefinite" to="86 74" 
+        begin="333ms;large_phase2.end+1042ms" dur="375ms" from="131 84" 
+        to="131 84" 
         additive="sum"
         type="translate"/>
     <animateTransform 
         attributeName="transform" 
-        attributeType="XML" 
-        begin="0.17s;phase2.end" dur="4s" from="0.28" 
-        repeatCount="indefinite" to="1" 
+        begin="333ms;large_phase2.end+1042ms" dur="375ms" from="0.283 0.293" 
+        to="0.933 0.935" 
         additive="sum"
         type="scale"/>
     <animateTransform 
         attributeName="transform" 
-        attributeType="XML" 
-        begin="0.17s;phase2.end" dur="4s" from="-86 -74" 
-        repeatCount="indefinite" to="-86 -74" 
+        begin="333ms;large_phase2.end+1042ms" dur="375ms" from="-131 -84" 
+        to="-131 -84" 
         type="translate"
         additive="sum"
         />
-    <animate attributeName="opacity" attributeType="XML" id="phase2"
-      begin="phase1.end" dur="5s" from="1" to="0" 
-      repeatCount="indefinite" 
+    <animate attributeName="opacity" id="large_phase2"
+      begin="large_phase1.end" dur="208ms" from="1" to="0" 
+      /> 
+    <set attributeName="visibility" attributeType="CSS" to="hidden" begin="large_phase2.end" dur="1042ms"/>
+    <set attributeName="visibility" attributeType="CSS" to="visible" begin="large_phase1.begin" dur="583ms" />
+    <animateTransform 
+        attributeName="transform" 
+        begin="large_phase1.end" dur="208ms" from="4 6" 
+        to="0 0" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="large_phase1.end" dur="208ms" from="131 84" 
+        to="131 84" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="large_phase1.end" dur="208ms" from="0.933 0.935" 
+        to="1 1" 
+        additive="sum"
+        type="scale"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="large_phase1.end" dur="208ms" from="-131 -84" 
+        to="-131 -84" 
+        type="translate"
+        additive="sum"
+        />
+
+  </g>
+    <g id="question_mark_middle">
+      <path clip-rule="evenodd" d="m 25.519,112.054 -1.214,4.432 -5.608,1.219 -9.93,-9.264 4.241,-13.584 c 0,0 11.246,-6.967 15.204,-5.99 3.961,0.977 9.881,5.84 11.472,9.092 1.591,3.25 0.079,10.176 0.896,12.494 0.816,2.316 1.574,3.422 3.111,3.568 1.539,0.143 3.467,-0.193 3.229,1.422 -0.238,1.615 -0.279,4.801 -4.055,4.617 -3.774,-0.182 -6.874,-1.953 -8.529,-5.064 -2.967,-5.58 -0.448,-11.291 -2.042,-13.596 -1.593,-2.303 -8.463,-1.658 -8.853,-1.178 -0.39,0.482 -4.1,7.035 -3.352,7.748 0.748,0.715 5.43,4.084 5.43,4.084 z" id="path11" inkscape:connector-curvature="0" style="fill:#436eab;fill-rule:evenodd"/>
+      <path clip-rule="evenodd" d="m 47.3,117.804 c -0.752,2.291 1.227,5.287 3.992,5.203 2.765,-0.084 2.553,-1.484 3.101,-2.725 0.546,-1.242 0.776,-5.529 -0.899,-6.033 -1.676,-0.501 -4.987,-0.123 -6.194,3.555 z" id="path13" inkscape:connector-curvature="0" style="fill:#436eab;fill-rule:evenodd"/>
+    <animateTransform id="middle_phase1"
+        attributeName="transform" 
+        begin="0ms;large_phase2.end+708ms" dur="375ms" from="67 22" 
+        to="6 3" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="0ms;large_phase2.end+708ms" dur="375ms" from="92 142" 
+        to="92 142" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="0ms;large_phase2.end+708ms" dur="375ms" from="0.283 0.313" 
+        to="0.943 0.919" 
+        additive="sum"
+        type="scale"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="0ms;large_phase2.end+708ms" dur="375ms" from="-92 -142" 
+        to="-92 -142" 
+        type="translate"
+        additive="sum"
+        />
+    <animate attributeName="opacity" id="middle_phase2"
+      begin="middle_phase1.end" dur="208ms" from="1" to="0" 
       />                         
+    <set attributeName="visibility" attributeType="CSS" to="hidden" begin="middle_phase2.end" dur="1042ms"/>
+    <set attributeName="visibility" attributeType="CSS" to="visible" begin="middle_phase1.begin" dur="583ms" />
+    <animateTransform 
+        attributeName="transform" 
+        begin="middle_phase1.end" dur="208ms" from="6 3" 
+        to="0 0" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="middle_phase1.end" dur="208ms" from="92 142" 
+        to="92 142" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="middle_phase1.end" dur="208ms" from="0.943 0.919" 
+        to="1 1" 
+        additive="sum"
+        type="scale"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="middle_phase1.end" dur="208ms" from="-92 -142" 
+        to="-92 -142" 
+        type="translate"
+        additive="sum"
+        />
     </g>
   <g id="question_mark_small">
     <path clip-rule="evenodd" d="m 21.72,60.859 -1.787,2.871 -4.208,-0.316 -5.056,-8.615 5.84,-8.686 c 0,0 9.389,-2.551 11.975,-1.031 2.587,1.52 5.739,6.189 6.178,8.816 0.439,2.625 -2.08,7.189 -1.99,8.994 0.089,1.805 0.392,2.742 1.443,3.168 1.057,0.424 2.484,0.592 1.979,1.68 -0.508,1.088 -1.204,3.326 -3.827,2.404 -2.622,-0.92 -4.436,-2.82 -4.95,-5.361 -0.92,-4.553 2.055,-8.051 1.414,-10.01 -0.64,-1.957 -5.617,-2.945 -5.992,-2.688 -0.376,0.258 -4.367,4.1 -3.988,4.758 0.375,0.66 2.969,4.016 2.969,4.016 z" id="path17" inkscape:connector-curvature="0" style="fill:#bd93ba;fill-rule:evenodd"/>
     <path clip-rule="evenodd" d="m 35.867,69.486 c -1.012,1.455 -0.246,3.984 1.723,4.504 1.965,0.521 2.11,-0.51 2.756,-1.27 0.646,-0.762 1.709,-3.734 0.633,-4.441 -1.077,-0.705 -3.491,-1.133 -5.112,1.207 z" id="path19" inkscape:connector-curvature="0" style="fill:#bd93ba;fill-rule:evenodd"/>
-    <!-- animateTransform attributeName="transform" attributeType="XML"
-                                           type="translate"
-                                           from="20 50" to="0 0"
-                                           begin="0.9s" dur="0.5s"
-                                           repeatCount="indefinite"
-                                           additive="sum"
-                                 /><animate attributeName="opacity" attributeType="CSS"
-                                           from="1" to="0"
-                                           begin="1s" dur="0.3s"
-                                           repeatCount="indefinite"
-                                           additive="sum"
-                                 / -->
+    <animateTransform id="phase1"
+        attributeName="transform" 
+        begin="167ms;large_phase2.end+875ms" dur="375ms" from="71 73" 
+        to="7 7" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="167ms;large_phase2.end+875ms" dur="375ms" from="86 74" 
+        to="86 74" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="167ms;large_phase2.end+875ms" dur="375ms" from="0.270 0.278" 
+        to="0.919 0.917" 
+        additive="sum"
+        type="scale"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="167ms;large_phase2.end+875ms" dur="375ms" from="-86 -74" 
+        to="-86 -74" 
+        type="translate"
+        additive="sum"
+        />
+    <animate attributeName="opacity" id="phase2"
+      begin="phase1.end" dur="208ms" from="1" to="0"
+      />                         
+    <set attributeName="visibility" attributeType="CSS" to="hidden" begin="phase2.end" dur="1042ms"/>
+    <set attributeName="visibility" attributeType="CSS" to="visible" begin="phase1.begin" dur="583ms" />
+    <animateTransform 
+        attributeName="transform" 
+        begin="phase1.end" dur="208ms" from="7 7" 
+        to="0 0" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="phase1.end" dur="208ms" from="86 74" 
+        to="86 74" 
+        additive="sum"
+        type="translate"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="phase1.end" dur="208ms" from="0.918 0.917" 
+        to="1 1" 
+        additive="sum"
+        type="scale"/>
+    <animateTransform 
+        attributeName="transform" 
+        begin="phase1.end" dur="208ms" from="-86 -74" 
+        to="-86 -74" 
+        type="translate"
+        additive="sum"
+        />
   </g>
   <g id="g21">
     <path d="M171.57,144.132c-31.529,10.614-60.828,62.816-61.623,75.936s0.795,25.842,18.288,31.806   s42.142,9.541,71.96-7.952c29.817-17.492,54.227-29.946,53.551-63.477C253.071,146.916,211.724,130.616,171.57,144.132z" fill="#FDEEDF" id="path23"/>
