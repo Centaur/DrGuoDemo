@@ -36,7 +36,7 @@ var symbols = {
             id:'Image',
             type:'image',
             rect:['89px','315px','621px','156px','auto','auto'],
-            fill:["rgba(0,0,0,0)",im+"%E6%9C%A8%E5%A4%B4.svg",'0px','0px','100%','100%']
+            fill:["rgba(0,0,0,0)",im+"wood.svg",'0px','0px','100%','100%']
          },
          {
             id:'text01-a',
