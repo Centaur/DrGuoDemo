@@ -1,6 +1,7 @@
 .idea/
 .DS_Store
-platforms/
 bower_components/
+platforms/android/assets/www/
+platforms/android/bin/
 
 
