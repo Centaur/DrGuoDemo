@@ -2,7 +2,7 @@
 
 
 function onDeviceReady() {
-    if (Utils.isAndroid()) {
+    if (Utils.is_android()) {
         navigator.splashscreen.hide();
     }
     (function ($) {
@@ -175,7 +175,7 @@ function onDeviceReady() {
 
             var play_audio_dog, play_audio_dig;
 
-            if (Utils.isAndroid()) {
+            if (Utils.is_android()) {
                 var audio_dog = new Media('/android_asset/www/audio/dog.mp3', function () {
                 }, Utils.onMediaError);
                 var audio_dig = new Media('/android_asset/www/audio/dig.mp3', function () {
@@ -237,7 +237,7 @@ function onDeviceReady() {
     })(jQuery);
 }
 
-if (Utils.isAndroid()) {
+if (Utils.is_android()) {
     Utils.require_phonegap_js();
     document.addEventListener("deviceready", onDeviceReady, false);
 } else {

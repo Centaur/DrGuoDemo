@@ -11,6 +11,33 @@
 
     //Edge symbol: 'stage'
     (function (symbolName) {
+        Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function (sym, e) {
+            window.Utils.auto_scale(sym, $);
+
+            function onDeviceReady() {
+                if (window.Utils.is_android()) {
+                    var title_audio = new Media('/android_asset/www/longlog/sound/title.mp3', null, null);
+                    title_audio.play();
+                    sym.setVariable('title_audio', title_audio);
+                    var title_background_audio = new Media('/android_asset/www/common/S1564.WAV', null, null);
+                    title_background_audio.play();
+                    sym.setVariable('title_background_audio', title_background_audio);
+                }
+            }
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            function init() {
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+            yepnope({
+                nope: [],
+//                nope: ['../js/common.js', '../cordova.js'],
+                complete: init
+            });
+        });
+        //Edge binding end
 
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {
@@ -28,25 +55,15 @@
             sym.$("text01-b").hide();
             sym.$("text02-b").hide();
 
-            //声音的加载//get the value of a Symbol variable
-            //var audio_title = sym.getVariable("audio_title");
-            //audio_title.play();
-            //var audio_title_background = sym.getVariable('audio_title_background')
-            //audio_title_background();
-            sym.getVariable('title_background_audio').play();
-            sym.getVariable('title_audio').play();
+            if (window.Utils.is_ios()) {
+                var title_audio = sym.$('#title_audio')[0];
+                title_audio.volume = 1;
+                title_audio.play();
 
-            /*
-             var au_to_play=new Audio(); //申请一个动态内存存放音频文件
-             au_to_play.src="sound/title.mp3"; //指定文件名，这里使用的是相对路径
-             au_to_play.volume=1; //设置音频播放时候的音量大小
-             au_to_play.play(); //让文件开始播放
-
-             var au_to_play2=new Audio();
-             au_to_play2.src="common/S1564.WAV";
-             au_to_play2.volume=0.5;
-             au_to_play2.play();
-             */
+                var background_audio = sym.$('#background_audio')[0];
+                background_audio.volume = 0.5;
+                background_audio.play();
+            }
 
         });
         //Edge binding end
@@ -146,11 +163,11 @@
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
-            var au_to_play = new Audio();
-            au_to_play.src = "common/S1564.WAV";
-            au_to_play.volume = 0.5;
-            au_to_play.play();
-
+            if (window.Utils.is_ios()) {
+                var background_audio = sym.$('#background_audio')[0];
+                background_audio.volume = 0.5;
+                background_audio.play();
+            }
         });
         //Edge binding end
 
@@ -183,30 +200,6 @@
         });
         //Edge binding end
 
-        Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function (sym, e) {
-            window.Utils.auto_scale(sym, $);
-
-            function onDeviceReady() {
-                var title_audio = new Media('/android_asset/www/longlog/sound/title.mp3', null, null);
-                title_audio.play();
-                sym.setVariable('title_audio', title_audio);
-                var title_background_audio = new Media('/android_asset/www/common/S1564.WAV', null, null);
-                title_background_audio.play();
-                sym.setVariable('title_background_audio', title_background_audio);
-            }
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            function init() {
-                document.addEventListener("deviceready", onDeviceReady, false);
-            }
-
-            yepnope({
-                nope: [],
-//                nope: ['../js/common.js', '../cordova.js'],
-                complete: init
-            });
-        });
-        //Edge binding end
 
     })("stage");
     //Edge symbol end:'stage'

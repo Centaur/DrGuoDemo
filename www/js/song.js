@@ -10,7 +10,7 @@
 
 function onDeviceReady() {
     function get_video_url(elem) {
-        if (Utils.isAndroid()) {
+        if (Utils.is_android()) {
             Utils.checkIfFileExists('/mnt/sdcard-ext/1B.mp4', function(){
                 elem.src = 'file:///mnt/sdcard-ext/1B.mp4'
             });
@@ -74,7 +74,7 @@ function onDeviceReady() {
 }
 
 
-if (Utils.isAndroid()) {
+if (Utils.is_android()) {
     Utils.require_phonegap_js();
     document.addEventListener("deviceready", onDeviceReady, false);
 } else {

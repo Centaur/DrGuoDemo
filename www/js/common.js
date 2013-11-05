@@ -40,8 +40,12 @@ window.Utils = {
         document.body.appendChild(phonegap_js);
     },
 
-    isAndroid: function () {
+    is_android: function () {
         return /android/i.test(navigator.userAgent.toLowerCase());
+    },
+
+    is_ios: function() {
+        return /(iPad|iPhone|iPod)/i.test(navigator.userAgent.toLowerCase());
     },
 
     isPhone: function () {

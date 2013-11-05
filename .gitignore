@@ -3,5 +3,7 @@
 bower_components/
 platforms/android/assets/www/
 platforms/android/bin/
+platforms/ios/www
+
 
 

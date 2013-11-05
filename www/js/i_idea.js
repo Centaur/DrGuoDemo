@@ -8,7 +8,7 @@ function onDeviceReady() {
     })(jQuery)
 }
 
-if (Utils.isAndroid()) {
+if (Utils.is_android()) {
     Utils.require_phonegap_js();
     document.addEventListener("deviceready", onDeviceReady, false);
 } else {
