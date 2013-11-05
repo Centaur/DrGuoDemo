@@ -11,12 +11,11 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
    //Edge symbol: 'stage'
    (function(symbolName) {
-      
-      
-      
-
-      
-
+       //Edge binding end
+       Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function (sym, e) {
+           window.Utils.auto_scale(sym, $);
+       });
+       //Edge binding end
    })("stage");
    //Edge symbol end:'stage'
 
