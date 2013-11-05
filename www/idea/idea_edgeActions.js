@@ -11,18 +11,22 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
    //Edge symbol: 'stage'
    (function(symbolName) {
+      //Edge binding end
        Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function (sym, e) {
            window.Utils.auto_scale(sym, $);
        });
        //Edge binding end
 
-       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
          //调试跳过title
-         //sym.play(7500);
+         //sym.play(7499);
          
          //隐藏原件
+         sym.$("bulb-ray").hide();
+         sym.$("bulb-ray").hide();
          sym.$("text01-b").hide();
          sym.$("text02-b").hide();
+         sym.$("questionMark").hide();
          sym.$("btnA_symbol").hide();
          sym.$("btnB_symbol").hide();
          
@@ -36,7 +40,82 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          au_to_play.src="../common/S1564.WAV";
          au_to_play.volume=0.5;
          au_to_play.play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11135, function(sym, e) {
+         sym.$("bulb-ray").show();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11500, function(sym, e) {
+         sym.$("text01-b").show();
+         sym.$("text02-b").show();
          
+         sym.$("text01-a").hide();
+         sym.$("text02-a").hide();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 12395, function(sym, e) {
+         sym.$("text01-a").show();
+         sym.$("text02-a").show();
+         
+         sym.$("text01-b").hide();
+         sym.$("text02-b").hide();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 12615, function(sym, e) {
+         sym.$("text01-b").show();
+         sym.$("text02-b").show();
+         
+         sym.$("text01-a").hide();
+         sym.$("text02-a").hide();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 12810, function(sym, e) {
+         sym.$("text01-a").show();
+         sym.$("text02-a").show();
+         
+         sym.$("text01-b").hide();
+         sym.$("text02-b").hide();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 13000, function(sym, e) {
+         sym.$("text01-b").show();
+         sym.$("text02-b").show();
+         
+         sym.$("text01-a").hide();
+         sym.$("text02-a").hide();
+         
+         sym.$("btnA_symbol").show();
+         sym.$("btnB_symbol").show();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function(sym, e) {
+         sym.$("title").hide();
+         
+         var au_to_play=new Audio();
+         au_to_play.src="sound/CLICK8.WAV";
+         au_to_play.volume=0.5;
+         au_to_play.play();
+
+      });
+      //Edge binding end
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8500, function(sym, e) {
+         sym.$("questionMark").show();
 
       });
       //Edge binding end
@@ -50,38 +129,18 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       });
       //Edge binding end
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function(sym, e) {
-         sym.$("title").hide();
-         
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9750, function(sym, e) {
          var au_to_play=new Audio();
-         au_to_play.src="sound/Cartoon28.wav";
+         au_to_play.src="sound/CLAP1.WAV";
          au_to_play.volume=0.5;
          au_to_play.play();
 
       });
       //Edge binding end
 
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9250, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8250, function(sym, e) {
          var au_to_play=new Audio();
-         au_to_play.src="sound/Cartoon39.wav";
-         au_to_play.volume=0.5;
-         au_to_play.play();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8117, function(sym, e) {
-         var au_to_play=new Audio();
-         au_to_play.src="sound/hippo.mp3";
-         au_to_play.volume=1;
-         au_to_play.play();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9906, function(sym, e) {
-         var au_to_play=new Audio();
-         au_to_play.src="sound/hip.mp3";
+         au_to_play.src="sound/i.mp3";
          au_to_play.volume=1;
          au_to_play.play();
 
@@ -89,54 +148,10 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10500, function(sym, e) {
-         sym.$("text01-b").show();
-         sym.$("text02-b").show();
-         
-         sym.$("text01-a").hide();
-         sym.$("text02-a").hide();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11400, function(sym, e) {
-         sym.$("text01-a").show();
-         sym.$("text02-a").show();
-         
-         sym.$("text01-b").hide();
-         sym.$("text02-b").hide();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11599, function(sym, e) {
-         sym.$("text01-b").show();
-         sym.$("text02-b").show();
-         
-         sym.$("text01-a").hide();
-         sym.$("text02-a").hide();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11802, function(sym, e) {
-         sym.$("text01-a").show();
-         sym.$("text02-a").show();
-         
-         sym.$("text01-b").hide();
-         sym.$("text02-b").hide();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 12000, function(sym, e) {
-         sym.$("text01-b").show();
-         sym.$("text02-b").show();
-         
-         sym.$("text01-a").hide();
-         sym.$("text02-a").hide();
-         
-         sym.$("btnA_symbol").show();
-         sym.$("btnB_symbol").show();
+         var au_to_play=new Audio();
+         au_to_play.src="sound/idea.mp3";
+         au_to_play.volume=1;
+         au_to_play.play();
 
       });
       //Edge binding end
@@ -154,21 +169,21 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
    //=========================================================
    
-   //Edge symbol: 'hippoA'
+   //Edge symbol: 'questionMark'
    (function(symbolName) {   
    
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1500, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1750, function(sym, e) {
          sym.play();
 
       });
       //Edge binding end
 
-   })("hippoA");
-   //Edge symbol end:'hippoA'
+   })("questionMark");
+   //Edge symbol end:'questionMark'
 
    //=========================================================
    
-   //Edge symbol: 'hippoB'
+   //Edge symbol: 'characterB'
    (function(symbolName) {   
    
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
@@ -177,54 +192,48 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       });
       //Edge binding end
 
-   })("hippoB");
-   //Edge symbol end:'hippoB'
+   })("characterB");
+   //Edge symbol end:'characterB'
 
    //=========================================================
    
-   //Edge symbol: 'hippoB-CT'
+   //Edge symbol: 'bulb-ray'
    (function(symbolName) {   
    
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 500, function(sym, e) {
          sym.play();
 
       });
       //Edge binding end
 
-   })("hippoB-CT");
-   //Edge symbol end:'hippoB-CT'
+   })("bulb-ray");
+   //Edge symbol end:'bulb-ray'
 
    //=========================================================
    
    //Edge symbol: 'btnA_symbol'
    (function(symbolName) {   
    
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.stop();
-
-      });
-      //Edge binding end
-
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         sym.stop();
-
-      });
-      //Edge binding end
-
       Symbol.bindElementAction(compId, symbolName, "${_btnA-m}", "click", function(sym, e) {
          // play the timeline from the given position (ms or label)
          sym.play(1);
          
          var au_to_play=new Audio();
-         au_to_play.src="sound/hippo.mp3";
+         au_to_play.src="sound/i.mp3";
          au_to_play.volume=1;
          au_to_play.play();
 
       });
       //Edge binding end
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
+         sym.stop();
+
+      });
+      //Edge binding end
+
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 250, function(sym, e) {
-         sym.getParentSymbol().play(11400);
+         sym.getParentSymbol().play(12395);
 
       });
       //Edge binding end
@@ -244,17 +253,17 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 250, function(sym, e) {
-         sym.getParentSymbol().play(11400);
+         sym.getParentSymbol().play(12395);
 
       });
       //Edge binding end
 
-      Symbol.bindElementAction(compId, symbolName, "${_btnB-m}", "click", function(sym, e) {
+      Symbol.bindElementAction(compId, symbolName, "${_btnB-m2}", "click", function(sym, e) {
          // play the timeline from the given position (ms or label)
          sym.play(1);
          
          var au_to_play=new Audio();
-         au_to_play.src="sound/hip.mp3";
+         au_to_play.src="sound/idea.mp3";
          au_to_play.volume=1;
          au_to_play.play();
 
@@ -264,4 +273,4 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    })("btnB_symbol");
    //Edge symbol end:'btnB_symbol'
 
-})(jQuery, AdobeEdge, "EDGE-5176730");
+})(jQuery, AdobeEdge, "EDGE-31348108");

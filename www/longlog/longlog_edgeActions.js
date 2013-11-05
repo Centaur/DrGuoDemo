@@ -184,19 +184,25 @@
         //Edge binding end
 
         Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function (sym, e) {
+            window.Utils.auto_scale(sym, $);
+
             function onDeviceReady() {
                 var title_audio = new Media('/android_asset/www/longlog/sound/title.mp3', null, null);
+                title_audio.play();
                 sym.setVariable('title_audio', title_audio);
                 var title_background_audio = new Media('/android_asset/www/common/S1564.WAV', null, null);
+                title_background_audio.play();
                 sym.setVariable('title_background_audio', title_background_audio);
             }
+            document.addEventListener("deviceready", onDeviceReady, false);
 
             function init() {
                 document.addEventListener("deviceready", onDeviceReady, false);
             }
 
             yepnope({
-                nope: ['../js/common.js', '../cordova.js'],
+                nope: [],
+//                nope: ['../js/common.js', '../cordova.js'],
                 complete: init
             });
         });
