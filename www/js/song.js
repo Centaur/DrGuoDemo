@@ -11,14 +11,12 @@
 function onDeviceReady() {
     function get_video_url(elem) {
         if (Utils.is_android()) {
-            Utils.checkIfFileExists('/mnt/sdcard-ext/1B.mp4', function(){
+            Utils.checkIfFileExists('/mnt/sdcard-ext/1B.mp4', function () {
                 elem.src = 'file:///mnt/sdcard-ext/1B.mp4'
             });
-            Utils.checkIfFileExists('/mnt/sdcard/1B.mp4', function(){
+            Utils.checkIfFileExists('/mnt/sdcard/1B.mp4', function () {
                 elem.src = 'file:///mnt/sdcard/1B.mp4'
             });
-        } else {
-            elem.src = 'video/1B.mp4';
         }
     }
 
@@ -48,14 +46,14 @@ function onDeviceReady() {
             return {left: video_x, top: video_y, width: video_width + 'px', height: video_height + 'px'};
         }
 
-        var video_tag = document.createElement('video');
-        get_video_url(video_tag);
-        video_tag.control = 'controls';
-        video_tag.id = 'song_video';
-        video_tag.autoplay = 'autoplay';
-        video_tag.controls = 'controls';
-        video_tag.poster = 'img/poster.jpg';
-        document.body.appendChild(video_tag);
+        if (Utils.is_android()) {
+            var video_tag = document.createElement('video');
+            get_video_url(video_tag);
+            video_tag.id = 'song_video';
+            video_tag.controls = 'controls';
+            video_tag.poster = 'img/poster.jpg';
+            document.body.appendChild(video_tag);
+        }
 
         function reset_video_element() {
             var video_tag = $('#song_video');
