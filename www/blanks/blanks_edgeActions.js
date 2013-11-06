@@ -16,6 +16,57 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
            window.Utils.auto_scale(sym, $);
        });
        //Edge binding end
+      Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function(sym, e) {
+          var all_start = function(event, ui) {
+              ui.position.left = 0;
+              ui.position.top = 0;
+          };
+          var all_drag = function(event, ui) {
+              var zoomScale = window.Utils.scale_factor;
+              var changeLeft = ui.position.left - ui.originalPosition.left; // find change in left
+              var newLeft = ui.originalPosition.left + changeLeft / (( zoomScale)); // adjust new left by our zoomScale
+
+              var changeTop = ui.position.top - ui.originalPosition.top; // find change in top
+              var newTop = ui.originalPosition.top + changeTop / zoomScale; // adjust new top by our zoomScale
+
+              ui.position.left = newLeft;
+              ui.position.top = newTop;
+
+          };
+          var on_revert = function(is_valid_drop){
+              if(is_valid_drop){
+                  return false;
+              } else {
+                  $('#no_audio')[0].play();
+                  return true;
+              }
+          };
+
+         function init() {
+         	sym.getSymbol('Symbol_a').$('a').draggable({opacity: 0.5, revert: on_revert, start: all_start, drag: all_drag});
+         	sym.getSymbol('Symbol_i').$('i').draggable({opacity: 0.5, revert: on_revert, start: all_start, drag: all_drag});
+         	sym.getSymbol('Symbol_o').$('o').draggable({opacity: 0.5, revert: on_revert, start: all_start, drag: all_drag});
+         	sym.getSymbol('Symbol_t').$('t').draggable({opacity: 0.5, revert: on_revert, start: all_start, drag: all_drag});
+         	sym.$('target_frame').droppable({
+         		accept: sym.getSymbol('Symbol_o').$('o'),
+         		drop: function() {
+         			if(window.Utils.is_ios()){
+                        sym.getSymbol('Symbol_o').stop();
+         				$('#yes_audio')[0].play();
+         			}
+         		}
+            });
+         }
+         
+         yepnope({
+         	 nope: ['../bower_components/jquery-ui/ui/minified/jquery-ui.min.js',
+         		  '../bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js'],
+         	 complete: init
+         });
+
+      });
+      //Edge binding end
+
    })("stage");
    //Edge symbol end:'stage'
 

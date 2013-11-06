@@ -9,6 +9,7 @@
 'use strict';
 
 window.Utils = {
+    scale_factor: 1.0,
     checkIfFileExists: function (path, onExist) {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
             fileSystem.root.getFile(path, { create: false }, onExist, null);
@@ -79,6 +80,8 @@ window.Utils = {
             if (stageHeight * rescale > desiredHeight){ // Do not scale larger than the height of the browser window
                 rescale = rescaleHeight;
             }
+
+            window.Utils.scale_factor = rescale;
 // Rescale the stage!
             stage.css('transform', "scale(" + rescale + ")");
             stage.css( '-o-transform', "scale(" + rescale + ")");
