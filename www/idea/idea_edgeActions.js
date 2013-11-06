@@ -124,7 +124,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (window.Utils.is_ios()) {
-                var background_audio = sym.$('#background_audio');
+                var background_audio = sym.$('#background_audio')[0];
                 background_audio.volume = 0.5;
                 background_audio.play();
             }
