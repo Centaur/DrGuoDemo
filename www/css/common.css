@@ -4,25 +4,6 @@ body, html {
 
 a:focus { outline:none; -moz-outline:none;}
 a img{ border:none;}
-/*.page{ width:100%;}
-.page a{ display:block; float:left; padding:6px 15px 6px 15px; margin-right:10px; color:#5e6f00; font-family:"微软雅黑"; font-weight: bolder; text-decoration:none;
-border:2px solid #cccc00;
--webkit-border-radius: 8px;
--moz-border-radius: 8px;
-border-radius: 8px;
-background: #FFC; /* 备用属性 */
-/*background: -moz-linear-gradient(top, #eef5c2, #e0d71e);
-background: -webkit-gradient(linear, 0 0, 0 100%, from(#eef5c2), to(#e0d71e));
- }
-.page a:active{ text-decoration:none;
-border:2px solid #afaf00;
--webkit-border-radius: 8px;
--moz-border-radius: 8px;
-border-radius: 8px;
-background: #FFC; /* 备用属性 */
-/*background: -moz-linear-gradient(top, #e4ef9d, #cdbf0f);
-background: -webkit-gradient(linear, 0 0, 0 100%, from(#e4ef9d), to(#cdbf0f));
- }*/
 
 .pageTop{ position:absolute; z-index:2; left:1%; top:1%;}
 .pageTop a{ display:block; float:left; width:46px; height:46px; margin-right:12px; text-decoration:none; text-align:center;}

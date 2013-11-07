@@ -17,8 +17,8 @@
         });
         //Edge binding end
         Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function (sym, e) {
-            function onDeviceReady() {
-                if (window.Utils.is_android()) {
+            if (window.Utils.is_android()) {
+                function onDeviceReady() {
                     var title_audio = new Media('/android_asset/www/idea/sound/title.mp3', null, null);
                     title_audio.play();
                     sym.setVariable('title_audio', title_audio);
@@ -30,10 +30,9 @@
                     sym.setVariable('clap1_audio', new Media('/android_asset/www/idea/sound/CLAP1.WAV', null, null));
                     sym.setVariable('click8_audio', new Media('/android_asset/www/idea/sound/CLICK8.WAV', null, null))
                 }
+
+                document.addEventListener("deviceready", onDeviceReady, false);
             }
-
-            document.addEventListener("deviceready", onDeviceReady, false);
-
         });
         //Edge binding end
 
@@ -158,10 +157,10 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9750, function (sym, e) {
             if (Utils.is_ios()) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/CLAP1.WAV";
-            au_to_play.volume = 0.5;
-            au_to_play.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/CLAP1.WAV";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('clap1_audio').play();
             }
@@ -171,10 +170,10 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8250, function (sym, e) {
             if (Utils.is_ios()) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/I.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/I.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('i_audio').play();
             }
@@ -184,10 +183,10 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10500, function (sym, e) {
             if (Utils.is_ios()) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/idea.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/idea.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('idea_audio').play();
             }
@@ -196,19 +195,19 @@
         //Edge binding end
 
     })("stage");
-    //Edge symbol end:'stage'
+//Edge symbol end:'stage'
 
-    //=========================================================
+//=========================================================
 
-    //Edge symbol: 'title'
+//Edge symbol: 'title'
     (function (symbolName) {
 
     })("title");
-    //Edge symbol end:'title'
+//Edge symbol end:'title'
 
-    //=========================================================
+//=========================================================
 
-    //Edge symbol: 'questionMark'
+//Edge symbol: 'questionMark'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1750, function (sym, e) {
@@ -218,11 +217,11 @@
         //Edge binding end
 
     })("questionMark");
-    //Edge symbol end:'questionMark'
+//Edge symbol end:'questionMark'
 
-    //=========================================================
+//=========================================================
 
-    //Edge symbol: 'characterB'
+//Edge symbol: 'characterB'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function (sym, e) {
@@ -232,11 +231,11 @@
         //Edge binding end
 
     })("characterB");
-    //Edge symbol end:'characterB'
+//Edge symbol end:'characterB'
 
-    //=========================================================
+//=========================================================
 
-    //Edge symbol: 'bulb-ray'
+//Edge symbol: 'bulb-ray'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 500, function (sym, e) {
@@ -246,21 +245,21 @@
         //Edge binding end
 
     })("bulb-ray");
-    //Edge symbol end:'bulb-ray'
+//Edge symbol end:'bulb-ray'
 
-    //=========================================================
+//=========================================================
 
-    //Edge symbol: 'btnA_symbol'
+//Edge symbol: 'btnA_symbol'
     (function (symbolName) {
 
         Symbol.bindElementAction(compId, symbolName, "${_btnA-m}", "click", function (sym, e) {
             // play the timeline from the given position (ms or label)
             sym.play(1);
             if (Utils.is_ios()) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/I.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/I.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getParentSymbol().getVariable('i_audio').play();
             }
@@ -281,11 +280,11 @@
         //Edge binding end
 
     })("btnA_symbol");
-    //Edge symbol end:'btnA_symbol'
+//Edge symbol end:'btnA_symbol'
 
-    //=========================================================
+//=========================================================
 
-    //Edge symbol: 'btnB_symbol'
+//Edge symbol: 'btnB_symbol'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {
@@ -304,10 +303,10 @@
             // play the timeline from the given position (ms or label)
             sym.play(1);
             if (Utils.is_ios()) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/idea.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/idea.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getParentSymbol().getVariable('idea_audio').play();
             }
@@ -315,6 +314,7 @@
         //Edge binding end
 
     })("btnB_symbol");
-    //Edge symbol end:'btnB_symbol'
+//Edge symbol end:'btnB_symbol'
 
-})(jQuery, AdobeEdge, "EDGE-31348108");
+})
+    (jQuery, AdobeEdge, "EDGE-31348108");

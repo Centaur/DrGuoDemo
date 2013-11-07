@@ -17,8 +17,8 @@
         //Edge binding end
 
         Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function (sym, e) {
-            function onDeviceReady() {
-                if (window.Utils.is_android()) {
+            if (window.Utils.is_android()) {
+                function onDeviceReady() {
                     var title_audio = new Media('/android_asset/www/hippo/sound/title.mp3', null, null);
                     title_audio.play();
                     sym.setVariable('title_audio', title_audio);
@@ -30,9 +30,9 @@
                     sym.setVariable('cartoon28_audio', new Media('/android_asset/www/hippo/sound/Cartoon28.wav', null, null));
                     sym.setVariable('cartoon39_audio', new Media('/android_asset/www/hippo/sound/Cartoon39.wav', null, null))
                 }
-            }
 
-            document.addEventListener("deviceready", onDeviceReady, false);
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
 
         });
         //Edge binding end

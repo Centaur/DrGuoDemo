@@ -20,6 +20,9 @@
 package com.gtan.demo.drguo;
 
 import android.os.Bundle;
+import android.content.res.Configuration;
+import android.view.*;
+import android.widget.LinearLayout;
 import org.apache.cordova.*;
 
 public class DrGuoDemo extends CordovaActivity 
@@ -33,6 +36,20 @@ public class DrGuoDemo extends CordovaActivity
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl(), 6000);
         //super.loadUrl("file:///android_asset/www/index.html")
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+      super.onConfigurationChanged(newConfig);
+
+      if (super.splashDialog != null) {
+        ViewGroup rootView = (ViewGroup) super.splashDialog.getWindow()
+                .getDecorView().findViewById(android.R.id.content);
+        LinearLayout linearLayout = (LinearLayout) rootView.getChildAt(0);
+        // manually refresh the splash image
+        linearLayout.setBackgroundDrawable(null);
+        linearLayout.setBackgroundResource(R.drawable.splash);
+      }
     }
 }
 

@@ -18,8 +18,8 @@
         //Edge binding end
 
         Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function (sym, e) {
-            function onDeviceReady() {
-                if (window.Utils.is_android()) {
+            if (Utils.is_android()) {
+                function onDeviceReady() {
                     var title_audio = new Media('/android_asset/www/longlog/sound/title.mp3', null, null);
                     title_audio.play();
                     sym.setVariable('title_audio', title_audio);
@@ -31,8 +31,9 @@
                     sym.setVariable('brick_audio', new Media('/android_asset/www/longlog/sound/Brick Drop B.WAV', null, null));
                     sym.setVariable('bumps_audio', new Media('/android_asset/www/longlog/sound/Bumps 5 Dull.WAV', null, null))
                 }
+
+                document.addEventListener("deviceready", onDeviceReady, false);
             }
-            document.addEventListener("deviceready", onDeviceReady, false);
         });
         //Edge binding end
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {

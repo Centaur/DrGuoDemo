@@ -17,8 +17,8 @@
         });
         //Edge binding end
         Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function (sym, e) {
-            function onDeviceReady() {
-                if (window.Utils.is_android()) {
+            if (window.Utils.is_android()) {
+                function onDeviceReady() {
                     var title_audio = new Media('/android_asset/www/dogdig/sound/title.mp3', null, null);
                     title_audio.play();
                     sym.setVariable('title_audio', title_audio);
@@ -30,9 +30,9 @@
                     sym.setVariable('dog14_audio', new Media('/android_asset/www/dogdig/sound/DOG14.WAV', null, null));
                     sym.setVariable('dog17_audio', new Media('/android_asset/www/dogdig/sound/DOG17.WAV', null, null))
                 }
-            }
 
-            document.addEventListener("deviceready", onDeviceReady, false);
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
 
         });
         //Edge binding end
