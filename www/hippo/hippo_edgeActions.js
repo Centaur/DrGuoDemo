@@ -16,6 +16,27 @@
         });
         //Edge binding end
 
+        Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function (sym, e) {
+            function onDeviceReady() {
+                if (window.Utils.is_android()) {
+                    var title_audio = new Media('/android_asset/www/hippo/sound/title.mp3', null, null);
+                    title_audio.play();
+                    sym.setVariable('title_audio', title_audio);
+                    var title_background_audio = new Media('/android_asset/www/common/S1564.WAV', null, null);
+                    title_background_audio.play();
+                    sym.setVariable('title_background_audio', title_background_audio);
+                    sym.setVariable('hippo_audio', new Media('/android_asset/www/hippo/sound/hippo.mp3', null, null));
+                    sym.setVariable('hip_audio', new Media('/android_asset/www/hippo/sound/hip.mp3', null, null));
+                    sym.setVariable('cartoon28_audio', new Media('/android_asset/www/hippo/sound/Cartoon28.wav', null, null));
+                    sym.setVariable('cartoon39_audio', new Media('/android_asset/www/hippo/sound/Cartoon39.wav', null, null))
+                }
+            }
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+        });
+        //Edge binding end
+
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {
             //调试跳过title
             //sym.play(7500);
@@ -40,48 +61,67 @@
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
-            var au_to_play = new Audio();
-            au_to_play.src = "../common/S1564.WAV";
-            au_to_play.volume = 0.5;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "../common/S1564.WAV";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('title_background_audio').play();
+            }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function (sym, e) {
             sym.$("title").hide();
-
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/Cartoon28.wav";
-            au_to_play.volume = 0.5;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/Cartoon28.wav";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('cartoon28_audio').play();
+            }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9250, function (sym, e) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/Cartoon39.wav";
-            au_to_play.volume = 0.5;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/Cartoon39.wav";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('cartoon39_audio').play();
+            }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8117, function (sym, e) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/hippo.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/hippo.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('hippo_audio').play();
+            }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9906, function (sym, e) {
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/hip.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/hip.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('hip_audio').play();
+            }
 
         });
         //Edge binding end
@@ -212,11 +252,14 @@
         Symbol.bindElementAction(compId, symbolName, "${_btnA-m}", "click", function (sym, e) {
             // play the timeline from the given position (ms or label)
             sym.play(1);
-
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/hippo.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/hippo.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getParentSymbol().getVariable('hippo_audio').play();
+            }
 
         });
         //Edge binding end
@@ -250,11 +293,14 @@
         Symbol.bindElementAction(compId, symbolName, "${_btnB-m}", "click", function (sym, e) {
             // play the timeline from the given position (ms or label)
             sym.play(1);
-
-            var au_to_play = new Audio();
-            au_to_play.src = "sound/hip.mp3";
-            au_to_play.volume = 1;
-            au_to_play.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "sound/hip.mp3";
+                au_to_play.volume = 1;
+                au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getParentSymbol().getVariable('hip_audio').play();
+            }
 
         });
         //Edge binding end

@@ -16,6 +16,26 @@
             window.Utils.auto_scale(sym, $);
         });
         //Edge binding end
+        Symbol.bindSymbolAction(compId, symbolName, "creationComplete", function (sym, e) {
+            function onDeviceReady() {
+                if (window.Utils.is_android()) {
+                    var title_audio = new Media('/android_asset/www/idea/sound/title.mp3', null, null);
+                    title_audio.play();
+                    sym.setVariable('title_audio', title_audio);
+                    var title_background_audio = new Media('/android_asset/www/common/S1564.WAV', null, null);
+                    title_background_audio.play();
+                    sym.setVariable('title_background_audio', title_background_audio);
+                    sym.setVariable('i_audio', new Media('/android_asset/www/idea/sound/I.mp3', null, null));
+                    sym.setVariable('idea_audio', new Media('/android_asset/www/idea/sound/idea.mp3', null, null));
+                    sym.setVariable('clap1_audio', new Media('/android_asset/www/idea/sound/CLAP1.WAV', null, null));
+                    sym.setVariable('click8_audio', new Media('/android_asset/www/idea/sound/CLICK8.WAV', null, null))
+                }
+            }
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+        });
+        //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {
             //调试跳过title
@@ -111,6 +131,8 @@
                 au_to_play.src = "sound/CLICK8.WAV";
                 au_to_play.volume = 0.5;
                 au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('click8_audio').play();
             }
 
         });
@@ -127,34 +149,48 @@
                 var background_audio = sym.$('#background_audio')[0];
                 background_audio.volume = 0.5;
                 background_audio.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('title_background_audio').play();
             }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9750, function (sym, e) {
+            if (Utils.is_ios()) {
             var au_to_play = new Audio();
             au_to_play.src = "sound/CLAP1.WAV";
             au_to_play.volume = 0.5;
             au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('clap1_audio').play();
+            }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8250, function (sym, e) {
+            if (Utils.is_ios()) {
             var au_to_play = new Audio();
             au_to_play.src = "sound/I.mp3";
             au_to_play.volume = 1;
             au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('i_audio').play();
+            }
 
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10500, function (sym, e) {
+            if (Utils.is_ios()) {
             var au_to_play = new Audio();
             au_to_play.src = "sound/idea.mp3";
             au_to_play.volume = 1;
             au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getVariable('idea_audio').play();
+            }
 
         });
         //Edge binding end
@@ -220,11 +256,14 @@
         Symbol.bindElementAction(compId, symbolName, "${_btnA-m}", "click", function (sym, e) {
             // play the timeline from the given position (ms or label)
             sym.play(1);
-
+            if (Utils.is_ios()) {
             var au_to_play = new Audio();
             au_to_play.src = "sound/I.mp3";
             au_to_play.volume = 1;
             au_to_play.play();
+            } else if (Utils.is_android()) {
+                sym.getParentSymbol().getVariable('i_audio').play();
+            }
 
         });
         //Edge binding end
@@ -264,12 +303,14 @@
         Symbol.bindElementAction(compId, symbolName, "${_btnB-m2}", "click", function (sym, e) {
             // play the timeline from the given position (ms or label)
             sym.play(1);
-
+            if (Utils.is_ios()) {
             var au_to_play = new Audio();
             au_to_play.src = "sound/idea.mp3";
             au_to_play.volume = 1;
             au_to_play.play();
-
+            } else if (Utils.is_android()) {
+                sym.getParentSymbol().getVariable('idea_audio').play();
+            }
         });
         //Edge binding end
 
