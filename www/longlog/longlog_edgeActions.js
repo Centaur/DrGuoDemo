@@ -168,9 +168,14 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (window.Utils.is_ios()) {
-                var background_audio = sym.$('#background_audio')[0];
-                background_audio.volume = 0.5;
-                background_audio.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "../common/S1564.WAV";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
+
+//                var background_audio = sym.$('#background_audio')[0];
+//                background_audio.volume = 0.5;
+//                background_audio.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('title_background_audio').play();
             }

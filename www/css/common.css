@@ -10,6 +10,9 @@ a img{ border:none;}
 .pageTop a.btnA{ background: url(../img/btn_group.png) no-repeat 0 0;}
 .pageTop a.btnB{ background: url(../img/btn_group.png) no-repeat -46px 0;}
 .pageTop a.btnC{ background: url(../img/btn_group.png) no-repeat -92px 0;}
+.right{ left:auto; right:1%;}
+.pageTop a.btnD{ background: url(../img/btn_group.png) no-repeat -138px 0;}
+.pageTop a:active.btnD{ background: url(../img/btn_group.png) no-repeat -138px -46px;}
 .pageTop a:active.btnA{ background: url(../img/btn_group.png) no-repeat 0 -46px;}
 .pageTop a:active.btnB{ background: url(../img/btn_group.png) no-repeat -46px -46px;}
 .pageTop a:active.btnC{ background: url(../img/btn_group.png) no-repeat -92px -46px;}

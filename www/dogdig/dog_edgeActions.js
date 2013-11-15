@@ -74,8 +74,7 @@
             sym.$("mud").show();
 
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/DOG17.WAV";
+                var au_to_play = sym.$('#dog17_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -87,8 +86,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
+                var au_to_play = sym.$('title_background_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -100,8 +98,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8500, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/DOG14.WAV";
+                var au_to_play = sym.$('#dog14_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -113,8 +110,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8000, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/dog.mp3";
+                var au_to_play = sym.$('#dog_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             }
@@ -127,8 +123,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9338, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/dig.mp3";
+                var au_to_play = sym.$('#dig_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             }
@@ -261,8 +256,7 @@
             sym.play(1);
 
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/dog.mp3";
+                var au_to_play = sym.$('#dog_audio')[0];
                 au_to_play.volume = 1;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -276,8 +270,7 @@
             sym.getParentSymbol().play(11000);
 
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/DOG17.WAV";
+                var au_to_play = sym.$('#dog17_audio')[0];
                 au_to_play.volume = 0.3;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -298,8 +291,7 @@
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 250, function (sym, e) {
             sym.getParentSymbol().play(11000);
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/DOG14.WAV";
+                var au_to_play = sym.$('#dog14_audio')[0];
                 au_to_play.volume = 0.3;
                 au_to_play.play();
             }
@@ -321,8 +313,7 @@
             sym.play(1);
 
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/dig.mp3";
+                var au_to_play = sym.$('#dig_audio')[0];
                 au_to_play.volume = 1;
                 au_to_play.play();
             } else if (Utils.is_android()) {

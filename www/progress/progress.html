@@ -3,34 +3,33 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>Untitled</title>
     <script src="../js/common.js" type="text/javascript"></script>
     <script src="../cordova.js" type="text/javascript"></script>
+
     <!--Adobe Edge Runtime-->
-    <script type="text/javascript" charset="utf-8" src="Lianliankan_edgePreload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="progress_edgePreload.js"></script>
     <style>
-        .edgeLoad-EDGE-25639878 {
+        body {
+            background: url(images/body_bg.jpg);
+        }
+        .edgeLoad-EDGE-28233390 {
             visibility: hidden;
         }
     </style>
     <!--Adobe Edge Runtime End-->
-    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
-
+    <link rel="stylesheet" href="../css/common.css"/>
 </head>
 <body style="margin:0;padding:0;">
-<audio src="../common/yes.wav" id="yes_audio"></audio>
-<audio src="../common/no.wav" id="no_audio"></audio>
 
-<div class="pageTop">
-    <a href="../song.html" class="btnC"><span>MV</span></a>
-</div>
+<audio id="open_audio" src="../common/open.wav"></audio>
+<audio id="close_audio" src="../common/close.wav"></audio>
+
 <div class="pageBottom">
     <a href="../menu.html" class="btnB"></a>
 </div>
-<div class="pageTop right">
-    <a href="../progress/progress.html" class="btnD"><span>进 度</span></a>
-</div>
 
-<div id="Stage" class="EDGE-25639878"
+<div id="Stage" class="EDGE-28233390"
      style="position:absolute; left:50%; top:50%; margin-top:-340px; margin-left:-400px;">
 </div>
 </body>

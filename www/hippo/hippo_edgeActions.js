@@ -62,8 +62,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
+                var au_to_play = sym.$('#background_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -76,8 +75,7 @@
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function (sym, e) {
             sym.$("title").hide();
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/Cartoon28.wav";
+                var au_to_play = sym.$('#cartoon28_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -89,8 +87,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9250, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/Cartoon39.wav";
+                var au_to_play = sym.$('#cartoon39_audio')[0];
                 au_to_play.volume = 0.5;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -102,8 +99,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8117, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/hippo.mp3";
+                var au_to_play = sym.$('#hippo_audio')[0];
                 au_to_play.volume = 1;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -115,8 +111,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9906, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/hip.mp3";
+                var au_to_play = sym.$('#hip_audio')[0];
                 au_to_play.volume = 1;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -253,8 +248,7 @@
             // play the timeline from the given position (ms or label)
             sym.play(1);
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/hippo.mp3";
+                var au_to_play = sym.$('#hippo_audio')[0];
                 au_to_play.volume = 1;
                 au_to_play.play();
             } else if (Utils.is_android()) {
@@ -294,8 +288,7 @@
             // play the timeline from the given position (ms or label)
             sym.play(1);
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/hip.mp3";
+                var au_to_play = sym.$('#hip_audio')[0];
                 au_to_play.volume = 1;
                 au_to_play.play();
             } else if (Utils.is_android()) {
