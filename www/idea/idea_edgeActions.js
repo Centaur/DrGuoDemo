@@ -11,7 +11,6 @@
 
     //Edge symbol: 'stage'
     (function (symbolName) {
-        //Edge binding end
         Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function (sym, e) {
             window.Utils.auto_scale(sym, $);
         });
@@ -36,6 +35,7 @@
         });
         //Edge binding end
 
+
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {
             //调试跳过title
             //sym.play(7499);
@@ -50,14 +50,16 @@
             sym.$("btnB_symbol").hide();
 
             //声音的加载
-            if (window.Utils.is_ios()) {
-                var title_audio = sym.$('#title_audio')[0];
-                title_audio.volume = 1;
-                title_audio.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio(); //申请一个动态内存存放音频文件
+                au_to_play.src = "sound/title.mp3"; //指定文件名，这里使用的是相对路径
+                au_to_play.volume = 1; //设置音频播放时候的音量大小
+                au_to_play.play(); //让文件开始播放
 
-                var background_audio = sym.$('#background_audio')[0];
-                background_audio.volume = 0.5;
-                background_audio.play();
+                var au_to_play = new Audio();
+                au_to_play.src = "../common/S1564.WAV";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
             }
 
         });
@@ -124,8 +126,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function (sym, e) {
             sym.$("title").hide();
-
-            if (window.Utils.is_ios()) {
+            if (Utils.is_ios()) {
                 var au_to_play = new Audio();
                 au_to_play.src = "sound/CLICK8.WAV";
                 au_to_play.volume = 0.5;
@@ -144,10 +145,11 @@
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
-            if (window.Utils.is_ios()) {
-                var background_audio = sym.$('#background_audio')[0];
-                background_audio.volume = 0.5;
-                background_audio.play();
+            if (Utils.is_ios()) {
+                var au_to_play = new Audio();
+                au_to_play.src = "../common/S1564.WAV";
+                au_to_play.volume = 0.5;
+                au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('title_background_audio').play();
             }
@@ -195,19 +197,19 @@
         //Edge binding end
 
     })("stage");
-//Edge symbol end:'stage'
+    //Edge symbol end:'stage'
 
-//=========================================================
+    //=========================================================
 
-//Edge symbol: 'title'
+    //Edge symbol: 'title'
     (function (symbolName) {
 
     })("title");
-//Edge symbol end:'title'
+    //Edge symbol end:'title'
 
-//=========================================================
+    //=========================================================
 
-//Edge symbol: 'questionMark'
+    //Edge symbol: 'questionMark'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1750, function (sym, e) {
@@ -217,11 +219,11 @@
         //Edge binding end
 
     })("questionMark");
-//Edge symbol end:'questionMark'
+    //Edge symbol end:'questionMark'
 
-//=========================================================
+    //=========================================================
 
-//Edge symbol: 'characterB'
+    //Edge symbol: 'characterB'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 1000, function (sym, e) {
@@ -231,11 +233,11 @@
         //Edge binding end
 
     })("characterB");
-//Edge symbol end:'characterB'
+    //Edge symbol end:'characterB'
 
-//=========================================================
+    //=========================================================
 
-//Edge symbol: 'bulb-ray'
+    //Edge symbol: 'bulb-ray'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 500, function (sym, e) {
@@ -245,11 +247,11 @@
         //Edge binding end
 
     })("bulb-ray");
-//Edge symbol end:'bulb-ray'
+    //Edge symbol end:'bulb-ray'
 
-//=========================================================
+    //=========================================================
 
-//Edge symbol: 'btnA_symbol'
+    //Edge symbol: 'btnA_symbol'
     (function (symbolName) {
 
         Symbol.bindElementAction(compId, symbolName, "${_btnA-m}", "click", function (sym, e) {
@@ -280,11 +282,11 @@
         //Edge binding end
 
     })("btnA_symbol");
-//Edge symbol end:'btnA_symbol'
+    //Edge symbol end:'btnA_symbol'
 
-//=========================================================
+    //=========================================================
 
-//Edge symbol: 'btnB_symbol'
+    //Edge symbol: 'btnB_symbol'
     (function (symbolName) {
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function (sym, e) {
@@ -310,11 +312,11 @@
             } else if (Utils.is_android()) {
                 sym.getParentSymbol().getVariable('idea_audio').play();
             }
+
         });
         //Edge binding end
 
     })("btnB_symbol");
-//Edge symbol end:'btnB_symbol'
+    //Edge symbol end:'btnB_symbol'
 
-})
-    (jQuery, AdobeEdge, "EDGE-31348108");
+})(jQuery, AdobeEdge, "EDGE-31348108");
