@@ -77,8 +77,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindElementAction(compId, symbolName, "${_see_btnB}", "click", function(sym, e) {
          sym.play(1);
          if(Utils.is_ios()){
-             var au_to_play=sym.$('#open_audio')[0];
-             au_to_play.volume=0.8;
+             var au_to_play=new Audio();
+             au_to_play.src = '../common/open.wav';
              au_to_play.play();
          } else if(Utils.is_android()){
              sym.getParentSymbol().getVariable('open_audio').play();
@@ -118,8 +118,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          sym.play(1);
 
           if(Utils.is_ios()){
-              var au_to_play=sym.$('#close_audio')[0];
-              au_to_play.volume=0.8;
+              var au_to_play=new Audio();
+              au_to_play.src = '../common/close.wav';
               au_to_play.play();
           } else if(Utils.is_android()){
               sym.getParentSymbol().getParentSymbol().getVariable('close_audio').play();

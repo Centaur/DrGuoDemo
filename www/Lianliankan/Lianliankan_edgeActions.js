@@ -157,16 +157,16 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    (function(symbolName) {   
    
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 0, function(sym, e) {
-         var au_to_play=new Audio();
-         au_to_play.src="../common/happy.mp3";
-         au_to_play.volume=0.5;
-         au_to_play.play();
+//         var au_to_play=new Audio();
+//         au_to_play.src="../common/happy.mp3";
+//         au_to_play.volume=0.5;
+//         au_to_play.play();
 
       });
       //Edge binding end
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 14747, function(sym, e) {
-         sym.play();
+//         sym.play();
 
       });
       //Edge binding end
