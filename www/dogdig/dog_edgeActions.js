@@ -54,11 +54,9 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          //声音的加载
            if (window.Utils.is_ios()) {
                var title_audio = sym.$('#title_audio')[0];
-               title_audio.volume = 1;
                title_audio.play();
 
                var background_audio = sym.$('#background_audio')[0];
-               background_audio.volume = 0.5;
                background_audio.play();
            }
       });
@@ -77,8 +75,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function(sym, e) {
           if (Utils.is_ios()) {
-              var au_to_play = sym.$('title_background_audio')[0];
-              au_to_play.volume = 0.5;
+              var au_to_play = sym.$('#background_audio')[0];
               au_to_play.play();
           } else if (Utils.is_android()) {
               sym.getVariable('title_background_audio').play();
@@ -182,7 +179,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
               au_to_play.volume = 0.3;
               au_to_play.play();
           } else if (Utils.is_android()) {
-              sym.getParentSymbol().getVariable('dog17_audio').play();
+              sym.getVariable('dog17_audio').play();
           }
       });
       //Edge binding end

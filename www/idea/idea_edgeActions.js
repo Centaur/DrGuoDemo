@@ -51,15 +51,11 @@
 
             //声音的加载
             if (Utils.is_ios()) {
-                var au_to_play = new Audio(); //申请一个动态内存存放音频文件
-                au_to_play.src = "sound/title.mp3"; //指定文件名，这里使用的是相对路径
-                au_to_play.volume = 1; //设置音频播放时候的音量大小
+                var au_to_play = sym.$('#title_audio')[0]; //设置音频播放时候的音量大小
                 au_to_play.play(); //让文件开始播放
 
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
-                au_to_play.volume = 0.5;
-                au_to_play.play();
+                var au_to_play2 = sym.$('#background_audio')[0];
+                au_to_play2.play();
             }
 
         });
@@ -127,9 +123,7 @@
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function (sym, e) {
             sym.$("title").hide();
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/CLICK8.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#click8_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('click8_audio').play();
@@ -146,9 +140,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#background_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('title_background_audio').play();
@@ -159,9 +151,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9750, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/CLAP1.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#clap1_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('clap1_audio').play();
@@ -172,9 +162,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8250, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/I.mp3";
-                au_to_play.volume = 1;
+                var au_to_play = sym.$('#I_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('i_audio').play();
@@ -185,9 +173,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10500, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/idea.mp3";
-                au_to_play.volume = 1;
+                var au_to_play = sym.$('#idea_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('idea_audio').play();

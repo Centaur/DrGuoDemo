@@ -50,26 +50,17 @@
 
             //声音的加载
             if (Utils.is_ios()) {
-                var au_to_play = new Audio(); //申请一个动态内存存放音频文件
-                au_to_play.src = "sound/title.mp3"; //指定文件名，这里使用的是相对路径
-                au_to_play.volume = 1; //设置音频播放时候的音量大小
-                au_to_play.play(); //让文件开始播放
-
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#title_audio')[0];
                 au_to_play.play();
+                var au_to_play2 = sym.$('#background_audio')[0];
+                au_to_play2.play();
             }
-
-
         });
         //Edge binding end
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#background_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('title_background_audio').play();
@@ -81,9 +72,7 @@
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7500, function (sym, e) {
             sym.$("title").hide();
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/Cartoon28.wav";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#cartoon28_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('cartoon28_audio').play();
@@ -94,9 +83,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 9750, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/Cartoon39.wav";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#cartoon39_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('cartoon39_audio').play();
@@ -107,9 +94,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8500, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/hippo.mp3";
-                au_to_play.volume = 1;
+                var au_to_play = sym.$('#hippo_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('hippo_audio').play();
@@ -120,9 +105,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11000, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/hip.mp3";
-                au_to_play.volume = 1;
+                var au_to_play = sym.$('#hip_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('hip_audio').play();

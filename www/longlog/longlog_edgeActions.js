@@ -128,9 +128,7 @@
             sym.$("text01-a").show();
 
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/log.mp3";
-                au_to_play.volume = 1;
+                var au_to_play = sym.$('#log_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('log_audio').play()
@@ -149,9 +147,7 @@
             sym.$("text02-a").show();
 
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/long.mp3";
-                au_to_play.volume = 1;
+                var au_to_play = sym.$('#long_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('long_audio').play();
@@ -168,9 +164,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 4000, function (sym, e) {
             if (window.Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "../common/S1564.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#background_audio')[0];
                 au_to_play.play();
 
 //                var background_audio = sym.$('#background_audio')[0];
@@ -184,9 +178,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7870, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/Brick Drops B.WAV";
-                au_to_play.volume = 0.5;
+                var au_to_play = sym.$('#brick_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('brick_audio').play();
@@ -197,9 +189,7 @@
 
         Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 8060, function (sym, e) {
             if (Utils.is_ios()) {
-                var au_to_play = new Audio();
-                au_to_play.src = "sound/Bumps 5 Dull.WAV";
-                au_to_play.volume = 0.4;
+                var au_to_play = sym.$('#bumps_audio')[0];
                 au_to_play.play();
             } else if (Utils.is_android()) {
                 sym.getVariable('bumps_audio').play();
